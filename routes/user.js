@@ -326,7 +326,6 @@ router.post("/subscribeToNewsLetter", async (req, res) => {
         // Create a new subscription
         const newSubscription = new Subscribe({ email });
         await newSubscription.save();
-
         res.status(201).json({ message: "Subscribed successfully" });
     } catch (error) {
         res.status(500).json({ message: "Server error", error: error.message });

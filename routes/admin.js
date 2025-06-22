@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router();
-const {Admin, Book,Review,Subscribe} = require('../models/model')
+const {Admin, Book,Review,Subscribe} = require('../../models/model')
 const jwt = require('jsonwebtoken');
-const {JWT_SECRET } = require("../config/config")
-const adminMiddleware  = require('../middlewares/admin');
+const {JWT_SECRET } = require("../../config/config")
+const adminMiddleware  = require('../../middlewares/admin');
 const nodemailer = require('nodemailer');
 const axios = require('axios');
 const bcrypt = require('bcrypt');
@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 
 /*****************************************file uploads********************************************************/ 
 const cloudinary = require('cloudinary').v2;
-const config = require('../config/config');
+const config = require('../../config/config');
 cloudinary.config({ 
     cloud_name: config.cloudinary.cloudName, // Correctly access cloudName
     api_key: config.cloudinary.apiKey,       // Correctly access apiKey
