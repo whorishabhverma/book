@@ -12,7 +12,7 @@ const BookCard = ({ book, className = '', isHeartShow, userId }) => {
     setIsFavorite((prev) => !prev); // Toggle favorite state
 
     try {
-        const response = await fetch('http://localhost:5000/user/favorites', {
+        const response = await fetch('/user/favorites', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

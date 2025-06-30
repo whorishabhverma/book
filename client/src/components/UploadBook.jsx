@@ -37,7 +37,7 @@ const UploadBook = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await axios.post('http://localhost:5000/admin/uploadBooks', formData, {
+            const response = await axios.post('/admin/uploadBooks', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': token,

@@ -2,10 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { port } = require("../config/config");
+const { port } = require('./config/config');
 
-const adminRouter = require('../routes/admin');
-const userRouter = require('../routes/user');
+const adminRouter = require('./routes/admin');
+const userRouter = require('./routes/user');
 
 const app = express();
 

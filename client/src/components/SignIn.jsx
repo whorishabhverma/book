@@ -14,7 +14,7 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = formData.userType === 'admin' ? 'http://localhost:5000/admin/signin' : 'http://localhost:5000/user/signin';
+    const endpoint = formData.userType === 'admin' ? '/admin/signin' : '/user/signin';
     
     try {
       const response = await fetch(endpoint, {

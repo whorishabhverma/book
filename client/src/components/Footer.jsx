@@ -7,7 +7,7 @@ export const Footer = () => {
   const handleSubscribe = async (e) => {
     e.preventDefault(); // Prevent form from reloading the page
     try {
-      const response = await fetch('http://localhost:5000/user/subscribeToNewsLetter', {
+      const response = await fetch('/user/subscribeToNewsLetter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

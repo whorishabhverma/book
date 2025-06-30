@@ -45,7 +45,7 @@ const BooksList = ({ apiUrl, title, requiresAuth, excludeFavorites, isHeartShow,
   const handleAddToFavorites = async (bookId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/user/books/fav/${userId}/${bookId}`, {
+      const response = await fetch(`/user/books/fav/${userId}/${bookId}`, {
         method: 'POST',
         headers: {
           'Authorization': `${token}`,

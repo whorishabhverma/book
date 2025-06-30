@@ -22,7 +22,7 @@ const UserDashboard = () => {
     const fetchFavorites = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:5000/user/books/fav/${userId}`, {
+        const response = await fetch(`/user/books/fav/${userId}`, {
           headers: { 'Authorization': `${token}` }
         });
         if (response.ok) {
@@ -65,7 +65,7 @@ const UserDashboard = () => {
                       
 
                       <SearchableBooks 
-                  initialUrl="http://localhost:5000/user/booksa" 
+                  initialUrl="/user/booksa" 
                   title="All Books" 
                   requiresAuth={false} 
                 />
@@ -73,7 +73,7 @@ const UserDashboard = () => {
 
                       {/* Displaying books excluding favorites */}
                       <BooksList
-                        apiUrl={`http://localhost:5000/user/books/exclude/${userId}`}
+                        apiUrl={`/user/books/exclude/${userId}`}
                         title="Books available on Website"
                         requiresAuth={true}
                         excludeFavorites={favorites} // Exclude favorite books here
@@ -83,7 +83,7 @@ const UserDashboard = () => {
                       
                       {/* Displaying only favorite books */}
                       <BooksList
-                        apiUrl={`http://localhost:5000/user/books/fav/${userId}`}
+                        apiUrl={`/user/books/fav/${userId}`}
                         title="Your Favourite Books"
                         requiresAuth={true}
                         isHeartShow={false} // No heart icon here, since it's showing favorites
@@ -92,7 +92,7 @@ const UserDashboard = () => {
 
                       {/* Displaying only premium books */}
                       <BooksList
-                        apiUrl={`http://localhost:5000/user/premium-books`}
+                        apiUrl={`/user/premium-books`}
                         title="premium Books"
                         requiresAuth={true}
                       />

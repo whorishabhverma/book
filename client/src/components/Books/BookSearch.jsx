@@ -17,7 +17,7 @@ const BookSearch = () => {
         setError('');
         setIsLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/user/search?query=${query}`);
+            const response = await axios.get(`/user/search?query=${query}`);
             
             if (response.data && Array.isArray(response.data) && response.data.length > 0) {
                 setSearchResults(response.data);

@@ -24,13 +24,13 @@ const BookDetail = () => {
     try {
       const headers = token ? { 'Authorization': token } : {};
 
-      const bookResponse = await fetch(`http://localhost:5000/user/Books/${id}`, { headers });
+      const bookResponse = await fetch(`/user/Books/${id}`, { headers });
       if (!bookResponse.ok) throw new Error('Failed to fetch book details');
 
       const bookData = await bookResponse.json();
       setBook(bookData.Books[0]);
 
-      const reviewResponse = await fetch(`http://localhost:5000/user/books/${id}/reviews`, { headers });
+      const reviewResponse = await fetch(`/user/books/${id}/reviews`, { headers });
       if (!reviewResponse.ok) throw new Error('Failed to fetch reviews');
 
       const reviewData = await reviewResponse.json();
@@ -60,7 +60,7 @@ const BookDetail = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/user/books/${id}/review`, {
+      const response = await fetch(`/user/books/${id}/review`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
